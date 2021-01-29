@@ -32,12 +32,7 @@ public class UserController {
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public String saveUser(@ModelAttribute("customer") User user) {
-        if (user.getId()==0) {
-            userService.addUser(user);
-        }
-        else {
-            userService.editUser(user);
-        }
+        userService.addUser(user);
         return "redirect:/";
     }
 
